@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 2: Vis dyret i DOM </title>
+</head>
+<body>
+    <article id="dyr">
+        <p></p>
+        <img src="" alt="">
+    </article>
+
+    <script>
+    document.addEventListener("DOMContentLoaded",start)
+    console.log("DOMContentLoaded")
+
+    function start(){ 
+
+    console.log(start)
+
+        const object = {
+    navn: "Gris",
+    type: "pattedyr",
+    billede: "http://mabe-kea.dk/E19/pics/pig.png",
+    levested: "svinefarme"
+    }
+
+    console.log(object);
+
+        const destiantion = document.querySelector("#dyr");
+        const dyrType = ` dyr ${object.navn}, type ${object.type} , sted ${object.levested}`; 
+        destiantion.querySelector("p").textContent = dyrType;
+        destiantion.querySelector("img").src = object.billede;
+     }
+    </script>
+</body>
+</html>
