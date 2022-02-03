@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 3: Indsæt dyr i struktureret HTML </title>
+</head>
+<body>
+    <article id="dyr">
+        <h3></h3>
+        <p>Type:</p>
+        <p>Levested:</p>
+        <img src="" alt="">
+    </article>
+
+    <script>
+    document.addEventListener("DOMContentLoaded",start)
+    console.log("DOMContentLoaded")
+
+    function start(){ 
+
+    console.log(start)
+
+    const object = {
+    navn: "Gris",
+    type: "pattedyr",
+    billede: "http://mabe-kea.dk/E19/pics/pig.png",
+    levested: "svinefarme"
+    }
+
+    console.log(object);
+
+        const destiantion = document.querySelector("#dyr");
+    
+        destiantion.querySelector("h3").textContent = object.navn;
+        destiantion.querySelector("article p").textContent +=" " + object.type;
+        destiantion.querySelector("article p:nth-of-type(2)").textContent += " " + object.levested;
+        destiantion.querySelector("img").src = object.billede;
+     }
+    </script>
+</body>
+</html>
