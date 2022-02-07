@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Øvelse 1: Indlæs og vis json i DOM</title>
+    <style>
+    article{
+        border: 2px;
+        border-style: solid;
+        color: #000;
+        margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section class="liste"> </section>
+    <template>      
+    <article id="dyr">
+        <h2></h2>
+        <img src="" alt="">
+        <p></p>
+        <p class="type">Type:</p>
+        <p class="levested">Levested:</p>
+    </article>
+   
+    </template>
+
+    <script>
+    document.addEventListener("DOMContentLoaded",vis)
+    console.log("DOMContentLoaded")
+
+    const container = document.querySelector(".liste");
+    const dyrTenplat = document.querySelector("template");
+
+
+     const fil ="alleDyr.json";
+
+     async function hentdata() {
+            const respons = await fetch(fil);
+            const json = await respons.json();
+            vis(json);
+        }
+
+    function vis(json){
+      console.log(json);
+    }
+     
+
+
+    function vis(dyr){
+
+    dyr.forEach(etdyr => {
+
+    let klon = dyrTenplat.cloneNode(true).content;
+    klon.querySelector("h2").textContent = etdyr.navn;
+    klon.querySelector(".type").textContent = etdyr.type;
+    klon.querySelector(".levested").textContent = etdyr.levested;
+    klon.querySelector("img").src = etdyr.billede;
+    container.appendChild(klon);
+
+     })
+
+    }
+
+    hentdata();
+    
+    </script>
+</body>
+</html>
