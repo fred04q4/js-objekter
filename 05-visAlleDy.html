@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Øvelse 5: Liste af dyr vises i DOM</title>
+</head>
+<body>
+    <article id="dyr">
+        <p></p>
+        <img src="" alt="">
+    </article>
+
+    <script>
+    document.addEventListener("DOMContentLoaded",start)
+    console.log("DOMContentLoaded")
+
+    function start(){ 
+
+    console.log(start)
+
+        const object = [
+   { "navn": "gris","type": "pattedyr","billede": "http://mabe-kea.dk/E19/pics/pig.png","levested": "svinefarme"},
+   { "navn": "Frog","type": "amfibie","billede": "http://mabe-kea.dk/E19/pics/frog.png","levested": "sø"},
+   { "navn": "ræv","type": "pattedyr","billede": "http://mabe-kea.dk/E19/pics/fox.png","levested": "skov"},
+   { "navn": "sild","type": "fisk","billede": "http://mabe-kea.dk/E19/pics/sild.jpg","levested": "have"},
+   { "navn": "krokodille","type": "krybdyr","billede": "http://mabe-kea.dk/E19/pics/kroko.jpg","levested": "sø"},
+    ]
+
+    console.log(object);
+
+     }
+    </script>
+</body>
+</html>
