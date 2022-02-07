@@ -7,6 +7,7 @@
     <title>Øvelse 5: Liste af dyr vises i DOM</title>
 </head>
 <body>
+    <section id="liste"></section>
     <article id="dyr">
         <p></p>
         <img src="" alt="">
@@ -16,21 +17,27 @@
     document.addEventListener("DOMContentLoaded",start)
     console.log("DOMContentLoaded")
 
-    function start(){ 
-
-    console.log(start)
-
-        const object = [
+  
+        const objecter = [
    { "navn": "gris","type": "pattedyr","billede": "http://mabe-kea.dk/E19/pics/pig.png","levested": "svinefarme"},
    { "navn": "Frog","type": "amfibie","billede": "http://mabe-kea.dk/E19/pics/frog.png","levested": "sø"},
    { "navn": "ræv","type": "pattedyr","billede": "http://mabe-kea.dk/E19/pics/fox.png","levested": "skov"},
-   { "navn": "sild","type": "fisk","billede": "http://mabe-kea.dk/E19/pics/sild.jpg","levested": "have"},
-   { "navn": "krokodille","type": "krybdyr","billede": "http://mabe-kea.dk/E19/pics/kroko.jpg","levested": "sø"},
+   { "navn": "sild","type": "fisk","billede": "http://mabe-kea.dk/E19/pics/sild.jpg","levested": "havet"},
+   { "navn": "krokodille","type": "krybdyr","billede": "http://mabe-kea.dk/E19/pics/kroko.jpg","levested": "floden"}
     ]
 
     console.log(object);
 
-     }
+
+
+     function start(){
+        console.log(start)
+const listevisning = document.querySelector("#liste");
+objecter.forEach(object => {
+    listevisning.innerHTML += `<p>${object.navn},${object.type} fra ${object.levested} </p>`
+
+     })
+    }
     </script>
 </body>
 </html>
